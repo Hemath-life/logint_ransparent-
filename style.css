@@ -1,0 +1,113 @@
+/* to decler variable  */
+:root {
+  --bg-color: rgba(0, 0, 0, 0.7);
+  --gb-text: white;
+}
+
+/* to apply all css  */
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  letter-spacing: 1px;
+}
+
+body {
+  background: fixed url(bg.jpg) no-repeat;
+  background-size: cover;
+  text-transform: capitalize;
+}
+
+div.box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  padding: 40px;
+  background-color: var(--bg-color);
+  box-sizing: border-box;
+  box-shadow: 15px 40px 50px var(--bg-color);
+  border-radius: 10px;
+  border-bottom: 1px solid var(--gb-text);
+  border-top: 1px solid var(--gb-text);
+}
+div.box h2 {
+  margin: 0 0 30px 0;
+  text-shadow: 0 1px 10px var(--gb-text);
+  text-align: center;
+  color: aliceblue;
+}
+
+div.box .inputbox {
+  position: relative;
+}
+div.box .inputbox input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  outline: none;
+  background: transparent;
+  border-bottom: 1px solid var(--gb-text);
+}
+
+div.box .inputbox label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: 0.5s;
+}
+div.box .inputbox input:focus ~ label,
+div.box .inputbox input:valid ~ label {
+  top: -18px;
+  left: 0;
+  color: #03a9f4;
+  font-size: 12px;
+}
+.box input[type="submit"] {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  background-color: #03a9f4;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 500px) {
+  div.box {
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    /* transition: 1s all; */
+    animation: mymove 1s 1;
+    /* transition: 1s all; */
+  }
+
+  @keyframes mymove {
+    0% {
+      opacity: 0;
+    }
+    25% {
+      opacity: 0.3;
+    }
+    50% {
+      opacity: 0.6;
+    }
+    75% {
+      opacity: 0.8;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
